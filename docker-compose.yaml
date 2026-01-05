@@ -10,6 +10,7 @@ services:
     volumes:
       - './nginx.conf:/etc/nginx/nginx.conf'
       - '/etc/letsencrypt:/etc/letsencrypt'
+    container_name: nginx-core
     depends_on:
       - cats-app
     networks:
@@ -18,5 +19,6 @@ services:
   cats-app:
     build:
       context: ../cats/app
+    container_name: cats-app
     networks:
       - vlad-network
