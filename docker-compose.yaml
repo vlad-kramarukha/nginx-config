@@ -17,6 +17,6 @@ services:
 
   cats-app:
     build:
-      context: ./cats-app
+      context: ../cats
     networks:
       - vlad-network
