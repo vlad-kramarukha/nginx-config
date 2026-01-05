@@ -1,0 +1,22 @@
+networks:
+  vlad-network:
+
+services:
+  nginx-core:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf'
+      - '/etc/letsencrypt:/etc/letsencrypt'
+    depends_on:
+      - cats-app
+    networks:
+      - vlad-network
+
+  cats-app:
+    build:
+      context: ./cats-app
+    networks:
+      - vlad-network
