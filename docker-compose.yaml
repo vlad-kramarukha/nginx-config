@@ -1,5 +1,9 @@
 networks:
-  vlad-network:
+  vlad-public-network:
+    driver: bridge
+  vlad-private-network:
+    driver: bridge
+    internal: true
 
 services:
   nginx-core:
@@ -14,11 +18,12 @@ services:
     depends_on:
       - cats-app
     networks:
-      - vlad-network
+      - vlad-public-network
+      - vlad-private-network
 
   cats-app:
     build:
       context: ../cats/app
     container_name: cats-app
     networks:
-      - vlad-network
+      - vlad-private-network
