@@ -1,4 +1,4 @@
-FROM nginx:aplpine
+FROM nginx:alpine-slim
 LABEL authors="Vlad Kramarukha"
 
 COPY . /usr/share/nginx/html
