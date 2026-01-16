@@ -12,7 +12,15 @@ services:
       - '/etc/letsencrypt:/etc/letsencrypt'
     container_name: nginx-core
     depends_on:
+      - home
       - cats-app
+    networks:
+      - vlad-network
+
+  home:
+    build:
+      context: home
+    container_name: home
     networks:
       - vlad-network
 
