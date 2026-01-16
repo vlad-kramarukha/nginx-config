@@ -19,8 +19,6 @@ services:
   cats-app:
     build:
       context: ../cats/app
-    environment:
-      APP_PATH: /cats
     container_name: cats-app
     networks:
       - vlad-network
