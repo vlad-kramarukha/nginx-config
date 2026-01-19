@@ -21,7 +21,7 @@ services:
 
   home:
     build:
-      context: home
+      context: ../home
     container_name: home
     networks:
       - vlad-network
