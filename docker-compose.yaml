@@ -28,7 +28,7 @@ services:
     build:
       context: ../cats/app
       args:
-       - BASE_PATH=/cats
+       - BASE_PATH=/
     container_name: cats-app
     networks:
       - vlad-network
