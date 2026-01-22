@@ -13,9 +13,6 @@ services:
     container_name: nginx-core
     environment:
       CATS_APP_BASE_PATH: ${CATS_APP_BASE_PATH:-/cats}
-    depends_on:
-      - home
-      - cats-app
     networks:
       - vlad-network
 
