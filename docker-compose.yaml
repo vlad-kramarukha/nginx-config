@@ -11,8 +11,6 @@ services:
       - './nginx.conf:/etc/nginx/nginx.conf'
       - '/etc/letsencrypt:/etc/letsencrypt'
     container_name: nginx-core
-    environment:
-      CATS_APP_BASE_PATH: ${CATS_APP_BASE_PATH:-/cats}
     networks:
       - vlad-network
 
