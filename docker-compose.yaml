@@ -11,6 +11,9 @@ services:
       - './nginx.conf:/etc/nginx/nginx.conf'
       - '/etc/letsencrypt:/etc/letsencrypt'
     container_name: nginx-core
+    depends_on:
+      - home
+      - cats-app
     networks:
       - vlad-network
 
